@@ -33,7 +33,9 @@ export default class ProductService {
     }
 
     async addProduct(name, image, ingredients, value) {
-        return await Axios.post(ENDPOINTS.ADD_PRODUCTS, null, { cancelToken: defineTimeout(5).token })
+        return await Axios.post(ENDPOINTS.ADD_PRODUCTS, {
+            name, image, ingredients, value
+        }, { cancelToken: defineTimeout(5).token })
     }
 
     async getTodayOffer() {
@@ -41,14 +43,23 @@ export default class ProductService {
     }
 
     async setTodayOffer(productId, commonValue, discountValue) {
-        return await Axios.post(ENDPOINTS.SET_TODAY_OFFER, null, { cancelToken: defineTimeout(5).token })
+        return await Axios.post(ENDPOINTS.SET_TODAY_OFFER, {
+            productId,
+            commonValue,
+            discountValue
+        }, { cancelToken: defineTimeout(5).token })
     }
 
     async addToWeek(productId, weekDay) {
-        return await Axios.post(ENDPOINTS.ADD_TO_WEEK, null, { cancelToken: defineTimeout(5).token })
+        return await Axios.post(ENDPOINTS.ADD_TO_WEEK, {
+            productId, weekDay
+        }, { cancelToken: defineTimeout(5).token })
     }
 
     async removeFromWeek(productId, weekDay) {
-        return await Axios.post(ENDPOINTS.REMOVE_FROM_WEEK, null, { cancelToken: defineTimeout(5).token })
+        return await Axios.post(ENDPOINTS.REMOVE_FROM_WEEK, {
+            productId, 
+            weekDay
+        }, { cancelToken: defineTimeout(5).token })
     }
 }
