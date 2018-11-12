@@ -6,7 +6,6 @@ import ProductItem from "../../components/ProductItem/ProductItem";
 import DayOffer from "../../components/DayOffer/DayOffer";
 
 class Products extends PureComponent {
-    count = 0;
     constructor() {
         super();
         this.service = new ProductService();
@@ -38,7 +37,7 @@ class Products extends PureComponent {
     render() {
         return (
             <Paper>
-                <Typography variant="h2">Aqui estão todas as nossas receitas {this.count++}</Typography>
+                <Typography variant="h2">Aqui estão todas as nossas receitas</Typography>
                 {!!this.state.products ? this.state.products.map((p, i) => <ProductItem key={i} product={p} />) : <Typography>Não há receitas cadastradas no momento</Typography>}
                 {!!this.state.dayOffer && <DayOffer product={this.state.dayOffer} discountValue={this.state.dayOffer.discountPercent} fakedValue={this.state.dayOffer.value} />}
             </Paper>

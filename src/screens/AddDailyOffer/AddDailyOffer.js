@@ -57,11 +57,11 @@ class Products extends PureComponent {
             <Paper style={{ flexDirection: "column", display: "flex", alignItems: "flex-start" }}>
                 <Typography variant="h2">Cadastrar produto do dia</Typography>
                 {!!this.state.selectedProduct && <ProductItem product={this.state.selectedProduct} />}
-                <Button id="setProduct" onClick={() => this.setState({ isModalOpen: true })}>Escolher produto</Button>
+                {(!!this.state.selectedProduct && this.state.selectedProduct.length > 0) && <Button id="setProduct" onClick={() => this.setState({ isModalOpen: true })}>Escolher produto</Button>}
 
                 <FormControl style={{ display: "flex", flexDirection: "row", alignItems: "flex-end" }}>
                     <Typography variant="subtitle1" style={{ marginRight: 8 }}>R$</Typography>
-                    <TextField type="number" min="0" value="0" step="0.01" id="fakedValue" value={fakedValue} label="Valor a ser mostrado para o client" onChange={({ target: { value } }) => this.setState({ fakedValue: value })} />
+                    <TextField type="number" min="0" value="0" step="0.01" id="fakedValue" value={fakedValue} label="Valor a ser mostrado para o cliente" onChange={({ target: { value } }) => this.setState({ fakedValue: value })} />
                 </FormControl>
                 <FormControl style={{ display: "flex", flexDirection: "row", alignItems: "flex-end" }}>
                     <Typography variant="subtitle1" style={{ marginRight: 8 }}>%</Typography>
