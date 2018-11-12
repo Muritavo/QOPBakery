@@ -57,7 +57,7 @@ class Products extends PureComponent {
             <Paper style={{ flexDirection: "column", display: "flex", alignItems: "flex-start" }}>
                 <Typography variant="h2">Cadastrar produto do dia</Typography>
                 {!!this.state.selectedProduct && <ProductItem product={this.state.selectedProduct} />}
-                {(!!this.state.selectedProduct && this.state.selectedProduct.length > 0) && <Button id="setProduct" onClick={() => this.setState({ isModalOpen: true })}>Escolher produto</Button>}
+                {(!!this.state.products && this.state.products.length > 0) && <Button id="setProduct" onClick={() => this.setState({ isModalOpen: true })}>Escolher produto</Button>}
 
                 <FormControl style={{ display: "flex", flexDirection: "row", alignItems: "flex-end" }}>
                     <Typography variant="subtitle1" style={{ marginRight: 8 }}>R$</Typography>

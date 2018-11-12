@@ -31,6 +31,7 @@ it('Adds a product to the main list', async (done) => {
     const discountPriceEvent = { target: { value: 25 } };
     let wrapper = mount(<AddDailyOffer />);
     process.nextTick(async () => {
+        wrapper.update();
         await wrapper.find("#setProduct").hostNodes().props().onClick();
         wrapper.update();
         await wrapper.find(Dialog).find(ProductItem).first().props().onClick();
