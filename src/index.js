@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Axios from 'axios';
+
+Axios.defaults.baseURL = "localhost:8080/";
+Axios.defaults.headers.post['Content-Type'] = 'application/json';
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
