@@ -36,4 +36,13 @@ jobs:
       # run tests!
       - run: yarn test
 
-
+# Deploy production
+  - deploy:
+      steps:
+        - add-ssh-keys:
+          fingerprints:
+            - "	2a:ee:fd:d0:1c:fd:86:93:6d:52:6f:4d:9c:99:77:5c"
+      command: |
+        if [ "${CIRCLE_BRANCH}" == "master" ];
+          then ./scripts/publish.sh production;
+        fi
