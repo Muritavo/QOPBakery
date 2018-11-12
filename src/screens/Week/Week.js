@@ -18,7 +18,7 @@ class Week extends Component {
 
     async _loadProducts() {
         try {
-            const products = await this.service.getProducts();
+            const products = await this.service.getProducts();            
             this.setState({ products });
         } catch (e) {
             this.props.enqueueSnackbar(

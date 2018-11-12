@@ -6,7 +6,7 @@ export default class DayOffer extends PureComponent {
         const { name, imageUrl, value, ingredients } = this.props.product;
         const { fakedValue, discountValue } = this.props;
         return (
-            <Snackbar anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            <Snackbar anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 open={true}
                 message={
                     <Card style={{ display: "flex", flexDirection: "row" }}>
